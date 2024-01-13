@@ -1,4 +1,4 @@
-const Text = (props: {content: string}) => {
+const Text = (props: { content: string }) => {
 
   const { content } = props;
 
@@ -11,8 +11,8 @@ const Message = (props: {}) => {
 
   return (
     <div>
-      <Text content="{content1}" />
-      <Text content="{content2}" />
+      <Text content={`${content1}`} />
+      <Text content={content2} />
     </div>
   )
 }

@@ -7,12 +7,10 @@ const Name = () => {
   }
 
   return (
-    <>
-      <div style={{padding: '16px', backgroundColor: 'grey'}}>
-        <label htmlFor={`name`}>이름</label>
-        <input id={`name`} className={`input-name`} type={`text`} onChange={onChange}/>
-      </div>
-    </>
+    <div style={{ padding: '16px', backgroundColor: 'grey' }}>
+      <label htmlFor={`name`}>이름</label>
+      <input id={`name`} className={`input-name`} type={`text`} onChange={onChange} />
+    </div>
   );
 };
 

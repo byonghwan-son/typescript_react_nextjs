@@ -10,7 +10,7 @@ const Container = (props: ContainerProps): JSX.Element => {
   const { title, children } = props
 
   return (
-    <div style={{background: 'red'}}>
+    <div style={{ background: 'red' }}>
       <span>{title}</span>
       <div>{children}</div>
     </div>
