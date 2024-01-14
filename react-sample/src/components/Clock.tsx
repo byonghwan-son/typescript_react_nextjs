@@ -16,7 +16,7 @@ function getLocaleFromString(text: string): Locale {
     case Locale.KR:
       return Locale.KR;
     default:
-      return Locale.KR;
+      return Locale.US;
   }
 }
 
@@ -34,17 +34,18 @@ function Clock() {
     }
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const savedLocale = localStorage.getItem(KEY_LOCALE)
     if(savedLocale !== null) {
-      setLocale(() => getLocaleFromString(savedLocale))
-      console.log(locale)
+      setLocale((prev) => {
+        return getLocaleFromString(savedLocale)
+      })
     }
   }, []);
 
   useEffect(() => {
+    // console.log(locale)
     localStorage.setItem(KEY_LOCALE, locale);
-    console.log(locale);
   }, [locale])
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) =>  {
