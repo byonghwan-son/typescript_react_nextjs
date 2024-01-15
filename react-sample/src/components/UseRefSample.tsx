@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -11,20 +11,20 @@ const ImageUploader = () => {
   const [message, setMessage] = useState<string | null>('');
 
   const onClickText = () => {
-    if(inputImageRef.current !== null) {
+    if (inputImageRef.current !== null) {
       inputImageRef.current.click()
     }
   }
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
-    if(files !== null && files.length > 0) {
+    if (files !== null && files.length > 0) {
       fileRef.current = files[0]
     }
   }
 
   const onClickUpload = async () => {
-    if(fileRef.current !== null) {
+    if (fileRef.current !== null) {
       await sleep(UPLOAD_DELAY)
       setMessage(`${fileRef.current.name} has been successfully uploaded.`)
     }
@@ -33,15 +33,15 @@ const ImageUploader = () => {
 
   return (
     <div>
-      <p style={{textDecoration: 'underline'}} onClick={onClickText}>이미지 업로드</p>
-      <input
-        ref={inputImageRef}
+      <p style={{ textDecoration: 'underline' }} onClick={onClickText}>이미지 업로드</p>
+      <label htmlFor='upload' style={{ visibility: 'hidden' }}>이미지 업로드</label>
+      <input id='upload' ref={inputImageRef}
         type={`file`}
         accept={`image/*`}
         onChange={onChangeImage}
-        style={{ visibility: 'hidden'}}
+        style={{ visibility: 'hidden' }}
       />
-      <br/>
+      <br />
       <button onClick={onClickUpload}>업로드한다</button>
       {message !== null && <p>{message}</p>}
     </div>

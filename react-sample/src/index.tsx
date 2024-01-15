@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ImageUploader from "./components/UseRefSample";
+import UseImperativeHandleSample from './components/UseImperativeHandleSample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,8 +23,10 @@ root.render(
     {/*<UseMemoSample/> */}
     {/*<Clock/>*/}
     {/*<UseContextSample/>*/}
-    <ImageUploader/>
+    {/*<ImageUploader/>*/}
     {/*</React.StrictMode>  useEffect 를 사용하는 환경이라면 가급적 사용하지 말자.*/}
+    <UseImperativeHandleSample />
+    <UseImperativeHandleSample />
   </>
 );
 
