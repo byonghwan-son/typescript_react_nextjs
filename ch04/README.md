@@ -32,24 +32,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Next.js 렌더링 방법
-
-- 정적 사이트 생성(SSG: Static Site Generation). 이 소스에서는 정적 사이트(Static)도 SSG에 포함시킴
-- 클라이언트 사이드 렌더링(CSR: Client Side Rendering)
-- 서버 사이드 렌더링(SSR: Server Side Rendering)
-- 점진적 정적 재생성(ISR: Incremental Static Regeneration)
-
-모든 페이지에서 사전 렌더링이 가능한 부분은 사전 렌더링을 수행함.
-
-## 페이지와 렌더링 방법
-
-### Next.js의 페이지와 데이터 취득
-
-|종류|데이터 취득에 사용하는 함수|데이터 취득 시점|보충설명|
-|-|-|-|-|
-|SSG|getStaticProps|빌드 시(SSG)|데이터 취득을 전혀 수행하지 않는 경우도 SSG에 해당|
-|SSR|getServerSideProps|사용자 요청 시(서버 사이드)|getInitialProps를 사용해도 SSR|
-|ISR|revalidate를 반환하는<br>getStaticProps|빌드 시(ISR)|ISR은 배포 후에도 백그라운드 빌드가 실행된다.|
-|CSR|그 밖의 임의의 함수(useSWR 등)|사용자 요청 시(브라우저)|CSR은 SSG/SSR/ISR과 동시에 사용 가능|
-
